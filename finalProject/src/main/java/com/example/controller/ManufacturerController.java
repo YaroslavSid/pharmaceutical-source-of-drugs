@@ -27,7 +27,7 @@ public class ManufacturerController {
         manufacturerService.createManufacturer(newManufacturer);
 
 
-        return "add-manufacturer";
+        return "manufacturer/add-manufacturer";
     }
 
 }

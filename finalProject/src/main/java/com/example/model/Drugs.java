@@ -7,7 +7,7 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+import java.util.Date;
 
 @Entity
 @Setter
@@ -21,15 +21,15 @@ public class Drugs {
     Integer id;
 
     @Column(nullable = false)
-    @NotBlank
     String name;
 
     @ManyToOne
     @JoinColumn(name = "manufacturer_id")
     Manufacturer manufacturer;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
-    String dateOfApproval;
+    Date dateOfApproval;
 
     @Column(nullable = false)
     String treatmentFor;

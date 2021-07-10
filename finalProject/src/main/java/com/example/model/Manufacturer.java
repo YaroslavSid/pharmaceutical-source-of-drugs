@@ -8,8 +8,6 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import java.util.Set;
 
 @Entity
 @Setter
@@ -23,13 +21,13 @@ public class Manufacturer {
     Integer id;
 
     @Column(nullable = false)
-    @NotBlank
     String name;
 
-    @OneToMany(mappedBy = "manufacturer", fetch = FetchType.LAZY,
-            cascade = {CascadeType.MERGE,
-            CascadeType.PERSIST,
-            CascadeType.DETACH,
-            CascadeType.REFRESH})
-    Set<Drugs> drugs;
+//    @OneToMany(mappedBy = "manufacturer", fetch = FetchType.LAZY,
+//            cascade = {CascadeType.MERGE,
+//            CascadeType.PERSIST,
+//            CascadeType.DETACH,
+//            CascadeType.REFRESH})
+//    @BatchSize(size = 10)
+//    Set<Drugs> drugs;
 }

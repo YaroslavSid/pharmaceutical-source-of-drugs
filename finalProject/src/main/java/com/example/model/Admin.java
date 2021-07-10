@@ -7,8 +7,6 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 @Entity
@@ -23,20 +21,16 @@ public class Admin {
     Integer id;
 
     @Column(nullable = false)
-    @NotBlank
     String name;
 
     @Column(nullable = false)
-    @NotBlank
     String surname;
 
     @Column(nullable = false)
-    @NotBlank
-    @Email
+//    @Email
     String email;
 
     @Column(nullable = false)
-    @NotBlank
     String password;
 
     @Transient
