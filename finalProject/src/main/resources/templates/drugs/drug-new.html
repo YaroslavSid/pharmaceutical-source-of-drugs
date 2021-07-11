@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="utf-8">
+    <title>New Drugs</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-2">
+                <div class="card-header">
+                    <h4>New Drug</h4>
+                </div>
+                <div class="card-body">
+                    <form action="#" th:action="@{drugs/drugs-list.html}" th:object="${drug}" method="post">
+                        <div class="form-group">
+                            <label for="nameDrug">Name drug</label>
+                            <input type="text" class="form-control" id="nameDrug" aria-describedby="titleHelp" placeholder="Enter title" th:field="*{name}">
+                        </div>
+                        <div class="form-group">
+                            <label for="manufacturer">Manufacturer</label>
+                            <input type="text" class="form-control" id="manufacturer" aria-describedby="titleHelp" placeholder="Enter title" th:field="*{manufacturer}">
+                        </div>
+                        <div class="form-group">
+                            <label for="dateOfApproval">Date Of Approval</label>
+                            <input type="date" class="form-control" id="dateOfApproval" aria-describedby="titleHelp" placeholder="Enter title" th:field="*{dateOfApproval}">
+                        </div>
+                        <div class="form-group">
+                            <label for="treatmentFor">Treatment For</label>
+                            <input type="text" class="form-control" id="treatmentFor" aria-describedby="titleHelp" placeholder="Enter title" th:field="*{treatmentFor}">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <input type="text" class="form-control" id="description" aria-describedby="titleHelp" placeholder="Enter title" th:field="*{description}">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

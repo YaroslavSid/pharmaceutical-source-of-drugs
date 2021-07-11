@@ -25,6 +25,6 @@ public class DrugsServiceImpl implements DrugsService {
 
     @Override
     public void createDrugs(Drugs drugs) {
-
+        drugsDAO.save(drugs);
     }
 }
