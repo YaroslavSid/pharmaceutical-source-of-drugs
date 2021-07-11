@@ -18,18 +18,25 @@
                     <h4>New Drug</h4>
                 </div>
                 <div class="card-body">
-                    <form action="#" th:action="@{drugs/drugs-list.html}" th:object="${drug}" method="post">
+                    <form action="#" th:action="@{/drugs}" th:object="${drug}" method="post">
                         <div class="form-group">
                             <label for="nameDrug">Name drug</label>
                             <input type="text" class="form-control" id="nameDrug" aria-describedby="titleHelp" placeholder="Enter title" th:field="*{name}">
                         </div>
                         <div class="form-group">
                             <label for="manufacturer">Manufacturer</label>
-                            <input type="text" class="form-control" id="manufacturer" aria-describedby="titleHelp" placeholder="Enter title" th:field="*{manufacturer}">
+                            <select name="Manufacturer" id="manufacturer">
+                                <option th:each="manufacturer : ${manufacturers}"
+                                        th:text="${manufacturer.getName()}"
+                                        th:value="${manufacturer.getId()}"
+                                ></option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="dateOfApproval">Date Of Approval</label>
                             <input type="date" class="form-control" id="dateOfApproval" aria-describedby="titleHelp" placeholder="Enter title" th:field="*{dateOfApproval}">
+<!--                            <p id="dateOfApproval" th:value="${#dates.format(#dates.create(), 'dd/MMM/yyyy HH:mm')}"></p>-->
+<!--                            <input name="updateDate" id="updateDate" th:value="${#dates.format(#dates.createNow(), 'dd/MMM/yyyy HH:mm')}"/> -->
                         </div>
                         <div class="form-group">
                             <label for="treatmentFor">Treatment For</label>

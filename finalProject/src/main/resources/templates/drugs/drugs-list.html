@@ -31,7 +31,7 @@
                         <tbody>
                         <tr th:each="drug : ${drugs}">
                             <td th:text="${drug.getName()}"></td>
-                            <td th:text="${drug.getManufacturer().getName()}"></td>
+                            <td th:text="${drug.getManufacturer()   .getName()}"></td>
                             <td th:text="${#calendars.format(drug.getDateOfApproval(),'dd MMMM yyyy')}"></td>
                             <td th:text="${drug.getTreatmentFor()}"></td>
                             <td th:text="${drug.getDescription()}"></td>

@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -28,7 +29,8 @@ public class Drugs {
     Manufacturer manufacturer;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = false)
+            @DateTimeFormat(pattern = "dd/MM/yyyy")
+//    @Column(nullable = false)
     Date dateOfApproval;
 
     @Column(nullable = false)
